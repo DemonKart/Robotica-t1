@@ -18,11 +18,12 @@ pontos = []
 
 for i in range(len(lines)):                                                                                                                                                                                   
   dados = lines[i].split(',')
-  print dados
-  p = Ponto(lines[0], lines[1], lines[2])
+  p = Ponto(dados[0], dados[1], dados[2])
   pontos.append(p)
   
 for p in pontos:
   print "p = (" + p.x + "," + p.y + "), " + p.t
+  
+
 
 text_file.close()
