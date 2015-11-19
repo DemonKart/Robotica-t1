@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-from math import sqrt
-from math import atan
-from math import degrees
+from math import atan2, sqrt, pi
 
 class Ponto(object):
   x = 0.0
@@ -24,7 +22,7 @@ def velocidade(p1, p2):
   
   deltaS = sqrt(abs((deltaY^2)-(deltaX^2))) # Calculo de velocidade media
   return (deltaS/deltaT)
-  
+
 def angulo(p1, p2):
   deltaX = p2.x-p1.x
   deltaY = p2.y-p1.y
@@ -35,9 +33,8 @@ def angulo(p1, p2):
     if deltaY < 0: # Se deslocou em Y para baixo
       return -90.0
     return p1.a # Nao se deslocou nem em X nem em Y
-    
-  m = deltaY/deltaX
-  a = degrees(atan(m))
+
+  a = atan2(deltaY, deltaX) * 180 / pi # Calcula o angulo
     
   return a # Se deslocou em X e Y
   
@@ -58,6 +55,6 @@ for i in range(len(lines)):
   
 for i in range(len(lines)):
   p = pontos[i]
-  print "P" + str(i) + "= (" + str(p.x) + "," + str(p.y) + ") \t| Tempo " + str(p.t) + "\t | Angulo " + str(p.a) + "\t | Velocidade=> Total: " + str("%0.4f" % p.v) + " \t Cada roda: " + str("%0.4f" % ((p.v)/2))
+  print "P" + str(i) + "= (" + str(p.x) + "," + str(p.y) + ") \t| Tempo " + str(p.t) + "\t | Angulo " + str("%0.4f" % p.a) + "\t | Velocidade=> Total: " + str("%0.4f" % p.v) + " \t Cada roda: " + str("%0.4f" % ((p.v)/2))
 
 text_file.close()
