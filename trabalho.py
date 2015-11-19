@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 from math import atan2, sqrt, pi
+import matplotlib
+matplotlib.use('Agg') 
+import matplotlib.pyplot as plt
 
 class Ponto(object):
   x = 0.0
@@ -53,8 +56,24 @@ for i in range(len(lines)):
     
   pontos.append(p)
   
+x_vec = []
+y_vec = []
 for i in range(len(lines)):
   p = pontos[i]
   print "P" + str(i) + "= (" + str(p.x) + "," + str(p.y) + ") \t| Tempo " + str(p.t) + "\t | Angulo " + str("%0.4f" % p.a) + "\t | Velocidade=> Total: " + str("%0.4f" % p.v) + " \t Cada roda: " + str("%0.4f" % ((p.v)/2))
+  x_vec.append(p.x) 
+  y_vec.append(p.y)
+  plt.text(p.x, p.y, r'p' + str(i) + '(' + str(p.x) + ',' + str(p.y) + ')')
 
+
+# Configuracoes para plotagem
+plt.grid(True)
+plt.rc('font', family='serif', size=13)
+
+plt.plot(x_vec,y_vec,color='#0066FF')
+plt.xlim(min(x_vec)-2,max(x_vec)+2)
+plt.ylim(min(y_vec)-2,max(y_vec)+2)
+plt.ylabel('$Y$',fontsize=20)
+plt.xlabel('$X$',fontsize=20)
+plt.savefig("Grafico.png")
 text_file.close()
