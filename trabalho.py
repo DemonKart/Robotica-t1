@@ -67,12 +67,15 @@ for i in range(len(lines)):
 
 
 # Configuracoes para plotagem
-plt.grid(True)
+plt.yscale('linear')
+plt.grid(b=True, which='major', color='gray', linestyle='-')
 plt.rc('font', family='serif', size=13)
 
 plt.plot(x_vec,y_vec,color='#0066FF')
-plt.xlim(min(x_vec)-2,max(x_vec)+2)
-plt.ylim(min(y_vec)-2,max(y_vec)+2)
+# plt.xlim(min(x_vec)-2,max(x_vec)+2)
+# plt.ylim(min(y_vec)-2,max(y_vec)+2)
+plt.xticks(range(max(x_vec)))
+plt.yticks(range(max(y_vec)))
 plt.ylabel('$Y$',fontsize=20)
 plt.xlabel('$X$',fontsize=20)
 plt.savefig("Grafico.png")
