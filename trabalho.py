@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from math import atan2, sqrt, pi
+from math import atan2, sqrt, pi, degrees
 import matplotlib
 matplotlib.use('Agg') 
 import matplotlib.pyplot as plt
@@ -37,7 +37,8 @@ def angulo(p1, p2):
       return -90.0
     return p1.a # Nao se deslocou nem em X nem em Y
 
-  a = atan2(deltaY, deltaX) * 180 / pi # Calcula o angulo
+  #a = atan2(deltaY, deltaX) * 180 / pi 
+  a = degrees(atan2(deltaY, deltaX)) # Calcula o angulo, dada tangente em radianos
     
   return a # Se deslocou em X e Y
   
@@ -72,8 +73,6 @@ plt.grid(b=True, which='major', color='gray', linestyle='-')
 plt.rc('font', family='serif', size=13)
 
 plt.plot(x_vec,y_vec,color='#0066FF')
-# plt.xlim(min(x_vec)-2,max(x_vec)+2)
-# plt.ylim(min(y_vec)-2,max(y_vec)+2)
 plt.xticks(range(max(x_vec)))
 plt.yticks(range(max(y_vec)))
 plt.ylabel('$Y$',fontsize=20)

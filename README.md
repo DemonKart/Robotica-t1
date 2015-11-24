@@ -1,18 +1,30 @@
+### CI851 Tópicos Especiais I - Introdução à Robótica Móvel
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+                               Trabalho de Cinemática
+                      Alan Peterson Carvalho Silva GRR20110556
+                           Dalmon Ian Martins GRR20139920
+                         Pedro Henrique Almeida GRR50141057
+                           Universidade Federal do Paraná
+                           
+---
 
-
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
-
-Happy coding!
-The Cloud9 IDE team
+## Ferramentas utilizadas:
+    C9 (IDE) para implementação do código, gitLab para acompanhamento
+    coletivo do desenvolvimento do trabalho e a linguagem usada foi python.
+    Algumas bibliotecas para facilitar a implementação de cálculos para o 
+    movimento do robô e a biblioteca matplotlib para gerar o gráfico em png
+    com o caminho feito pelo robô.
+    
+## Como executar:
+    Para compilar/executar basta digitar ./trabalho.py será gerada uma
+    tabela com os resultados no terminal e um png mostrando em forma de 
+    gráfico o caminho realizado pelo robô de acordo com as entradas 
+    presentes no arquivo in.txt do diretório corrente.
+    Cada linha da entrada representa um ponto (x,y,tempo).
+    
+## Implementação:
+    Basicamente criação de vetores no plano R2 de acordo com as coordenadas
+    vindas do arquivo txt de entrada. Após o deslocamento entre dois pontos 
+    calcular através de funções da biblioteca "math" o ângulo de rotação para
+    o deslocamento até o ponto seguinte. A "plotagem" mencionada no final do 
+    código é para a geração do png.
