@@ -2,7 +2,7 @@
 
                                Trabalho de Cinemática
                       Alan Peterson Carvalho Silva GRR20110556
-                           Dalmon Ian Martins GRR20139920
+                           Dalmon Ian Martins Oliveira GRR20139920
                          Pedro Henrique Almeida GRR50141057
                            Universidade Federal do Paraná
                            
@@ -26,5 +26,6 @@
     Basicamente criação de vetores no plano R2 de acordo com as coordenadas
     vindas do arquivo txt de entrada. Após o deslocamento entre dois pontos 
     calcular através de funções da biblioteca "math" o ângulo de rotação para
-    o deslocamento até o ponto seguinte. A "plotagem" mencionada no final do 
-    código é para a geração do png.
+    o deslocamento até o ponto seguinte. Cada roda contribui com metade da força
+    pra fazer o robô andar na velocidade total. A "plotagem" mencionada no final
+    do código é para a geração do png.
