@@ -23,7 +23,7 @@ def velocidade(p1, p2):
   deltaY = p2.y-p1.y
   deltaT = p2.t-p1.t
   
-  deltaS = sqrt(abs((deltaY^2)-(deltaX^2))) # Calculo de velocidade media
+  deltaS = sqrt(abs((deltaY^2)+(deltaX^2))) # Calculo de velocidade media
   return (deltaS/deltaT)
 
 def angulo(p1, p2):
